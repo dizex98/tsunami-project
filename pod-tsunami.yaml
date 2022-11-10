@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: tsunami
+  name: tsunami
+spec:
+  containers:
+  - image: dizex98/tsunami:2
+    name: tsunami
+    resources: {}
+    volumeMounts:
+    - mountPath: /usr/tsunami/logs
+      name: logs-volume
+  volumes:
+  - name: logs-volume
+    emptyDir:
+      sizeLimit: 500Mi
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}
