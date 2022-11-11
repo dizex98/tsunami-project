@@ -1,7 +1,6 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  creationTimestamp: null
   labels:
     run: tsunami
   name: tsunami
@@ -9,7 +8,17 @@ spec:
   containers:
   - image: dizex98/tsunami:2
     name: tsunami
-    resources: {}
+    args:
+    - --ip-v4-target=172.17.0.4
+    - --scan-results-local-output-format=JSON
+    - --scan-results-local-output-filename=logs/tsunami-output.json
+    resources:
+      requests:
+        memory: "32Mi"
+        cpu: "100m"
+      limits:
+        memory: "64Mi"
+        cpu: "200m" 
     volumeMounts:
     - mountPath: /usr/tsunami/logs
       name: logs-volume
@@ -19,4 +28,3 @@ spec:
       sizeLimit: 500Mi
   dnsPolicy: ClusterFirst
   restartPolicy: Never
-status: {}

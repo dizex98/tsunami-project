@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: jupyter-notebook
   name: jupyter-notebook
@@ -10,10 +9,8 @@ spec:
   selector:
     matchLabels:
       app: jupyter-notebook
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: jupyter-notebook
     spec:
@@ -23,5 +20,8 @@ spec:
         command:
         - start-notebook.sh
         - --NotebookApp.token=''
-        resources: {}
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "250m"
 status: {}
