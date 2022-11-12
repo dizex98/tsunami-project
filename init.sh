@@ -43,5 +43,7 @@ done
 # removing tsunami pods
 for (( i=0; i<$pod_num; i++ ))
 do
+  echo "Last logs from tsunami-$i:"
+  kubectl logs tsunami-$i | tail -n 7
   kubectl delete pod tsunami-$i
 done
