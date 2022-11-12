@@ -24,4 +24,26 @@ spec:
           limits:
             memory: "64Mi"
             cpu: "250m"
-status: {}
+      # - image: dizex98/tsunami:2
+      #   name: tsunami
+      #   env: 
+      #   - name: TARGET
+      #     valueFrom:
+      #       fieldRef:
+      #         fieldPath: status.podIP      
+      #   # args:
+      #   # - --ip-v4-target=$(TARGET)
+      #   # - --scan-results-local-output-format=JSON
+      #   # - --scan-results-local-output-filename=logs/tsunami-output.json
+      #   resources:
+      #     limits:
+      #       memory: "64Mi"
+      #       cpu: "250m" 
+      #   volumeMounts:
+      #   - mountPath: /usr/tsunami/logs
+      #     name: logs-volume
+      # volumes:
+      # - name: logs-volume
+      #   emptyDir:
+      #     sizeLimit: 500Mi
+      

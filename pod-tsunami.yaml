@@ -8,6 +8,7 @@ spec:
   containers:
   - image: dizex98/tsunami:2
     name: tsunami
+    env:
     args:
     - --ip-v4-target=172.17.0.4
     - --scan-results-local-output-format=JSON
