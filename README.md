@@ -5,7 +5,7 @@ Steps that has been taken:
 
 Instruction:
 * Make sure you are connected to a cluster and kubectl is already configured.
-* In order to execute the init script write these commands:
+* In order to execute the init script write the following commands:
     ```
     chmod +x init.sh
     bash init.sh
