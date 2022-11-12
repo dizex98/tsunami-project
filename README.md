@@ -1,8 +1,8 @@
 Instruction:
 * Make sure you are connected to a cluster and kubectl is already configured.
 * In order to execute the init script write these commands:
-    - chmod +x init.sh
-    - bash init.sh
+    ```chmod +x init.sh
+    bash init.sh```
 * The script will deploy a deployment of jupyter-notebook including replica of 3.
 * For each replica the script will deploy a single tsunami pod for a scan.
 
