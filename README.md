@@ -13,3 +13,4 @@ Instruction:
     ```
 * The script will deploy a deployment of jupyter-notebook including replica of 3.
 * For each replica the script will deploy a single tsunami pod for a scan.
+* In the end of the scan, the tsunami's pod will be destroyed, and you will be able to see the last relevant logs where you see the summary of the scan.

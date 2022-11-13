@@ -16,7 +16,7 @@ while [ $flag -eq 0 ]; do
 done
 
 
-# deploy for each pod of jupyter a pod of tsunami
+# Deploy for each pod of jupyter a pod of tsunami
 pod_num=0
 while read ip; do
   echo "Running scanner for ip:$ip"
@@ -41,7 +41,7 @@ while [ $flag -eq 0 ]; do
   done < list.status
 done
 
-# removing tsunami pods
+# removing tsunami pods and showing logs.
 for (( i=0; i<$pod_num; i++ ))
 do
   echo "Last logs from tsunami-$i:"
