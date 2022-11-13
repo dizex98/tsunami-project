@@ -1,7 +1,8 @@
 Steps that has been taken:
 1. At first I dockerize the image of tsunami, build and push to docker hub.
-2. I generated a yaml file where I deploy replicas of jupyter-notebook image so it will trigger vulnerability for the tsunami's pod.
-3. Created an init script so everything will be automated.
+2. I decided using Kubernetes cluster of minikube where I deploy all the relevant components.
+3. Generated a yaml file where I deploy replicas of jupyter-notebook image on so it will trigger vulnerability for the tsunami's pod.
+4. Created an init script so everything will be automated.
 
 Instruction:
 * Make sure you are connected to a cluster and kubectl is already configured.

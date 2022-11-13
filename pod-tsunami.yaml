@@ -8,9 +8,11 @@ spec:
   containers:
   - image: dizex98/tsunami:2
     name: tsunami
-    # env:
+    env:
+    - name: IP_TARGET
+      value: $(var)
     args:
-    - --ip-v4-target=172.17.0.4
+    - --ip-v4-target=$(IP_TARGET)
     - --scan-results-local-output-format=JSON
     - --scan-results-local-output-filename=logs/tsunami-output.json
     resources:

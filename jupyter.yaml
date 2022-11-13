@@ -31,8 +31,8 @@ spec:
       #     valueFrom:
       #       fieldRef:
       #         fieldPath: status.podIP      
-      #   # args:
-      #   # - --ip-v4-target=$(TARGET)
+      #   args:
+      #   - --ip-v4-target=$(TARGET)
       #   # - --scan-results-local-output-format=JSON
       #   # - --scan-results-local-output-filename=logs/tsunami-output.json
       #   resources:
