@@ -25,25 +25,30 @@ spec:
             memory: "64Mi"
             cpu: "250m"
       # - image: dizex98/tsunami:2
+      #   restartPolicy: OnFailure
       #   name: tsunami
       #   env: 
       #   - name: TARGET
       #     valueFrom:
       #       fieldRef:
-      #         fieldPath: status.podIP      
+      #         fieldPath: status.podIP
+      #   - name: POD_NAME
+      #     valueFrom:
+      #       fieldRef:
+      #         fieldPath: metadata.name
       #   args:
       #   - --ip-v4-target=$(TARGET)
-      #   # - --scan-results-local-output-format=JSON
-      #   # - --scan-results-local-output-filename=logs/tsunami-output.json
+      #   - --scan-results-local-output-format=JSON
+      #   - --scan-results-local-output-filename=logs/$(POD_NAME)-tsunami-output.json
       #   resources:
       #     limits:
-      #       memory: "64Mi"
+      #       memory: "512Mi"
       #       cpu: "250m" 
       #   volumeMounts:
       #   - mountPath: /usr/tsunami/logs
       #     name: logs-volume
       # volumes:
       # - name: logs-volume
-      #   emptyDir:
-      #     sizeLimit: 500Mi
+      #   hostPath:
+      #     path: /opt/logs
       

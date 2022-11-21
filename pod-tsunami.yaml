@@ -10,24 +10,27 @@ spec:
     name: tsunami
     env:
     - name: IP_TARGET
-      value: $(var)
+      valueFrom:
+        configMapKeyRef:
+          name: ip-target
+          key: ip
     args:
     - --ip-v4-target=$(IP_TARGET)
     - --scan-results-local-output-format=JSON
     - --scan-results-local-output-filename=logs/tsunami-output.json
     resources:
       requests:
-        memory: "32Mi"
+        memory: "256Mi"
         cpu: "100m"
       limits:
-        memory: "64Mi"
+        memory: "512Mi"
         cpu: "200m" 
     volumeMounts:
     - mountPath: /usr/tsunami/logs
       name: logs-volume
   volumes:
   - name: logs-volume
-    emptyDir:
-      sizeLimit: 500Mi
+    hostPath:
+      path: /opt/logs
   dnsPolicy: ClusterFirst
-  restartPolicy: Never
+  restartPolicy: OnFailure
